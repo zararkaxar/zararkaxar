@@ -1,1 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Zararkaxar — Building the Future</title>
+
+    <meta name="description"
+          content="Zararkaxar is a technology company building the future across AI, cybersecurity, networking, robotics, hardware, computing and space technology.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #050505;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 20px 7%;
+
+            background: rgba(5, 5, 5, 0.75);
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #aaa;
+            transition: 0.3s;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            padding: 120px 7% 80px;
+
+            background:
+                radial-gradient(circle at 50% 35%,
+                rgba(120,120,255,0.15),
+                transparent 35%),
+                #050505;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .tag {
+            display: inline-block;
+
+            padding: 8px 16px;
+            margin-bottom: 25px;
+
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 50px;
+
+            color: #aaa;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-size: clamp(55px, 12vw, 130px);
+            line-height: 0.95;
+            letter-spacing: -5px;
+
+            margin-bottom: 30px;
+        }
+
+        .hero h1 span {
+            color: #888;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: auto;
+
+            color: #aaa;
+            font-size: 18px;
+        }
+
+        .hero-buttons {
+            margin-top: 40px;
+
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            padding: 14px 24px;
+            border-radius: 8px;
+
+            background: #fff;
+            color: #000;
+
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+        }
+
+        .button-outline {
+            background: transparent;
+            color: #fff;
+            border: 1px solid #333;
+        }
+
+        /* GENERAL */
+
+        section {
+            padding: 110px 7%;
+        }
+
+        .section-title {
+            max-width: 700px;
+            margin-bottom: 60px;
+        }
+
+        .section-title small {
+            color: #777;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .section-title h2 {
+            font-size: clamp(38px, 6vw, 70px);
+            line-height: 1;
+            margin-top: 15px;
+        }
+
+        .section-title p {
+            color: #888;
+            margin-top: 20px;
+        }
+
+        /* ABOUT */
+
+        .about {
+            background: #080808;
+        }
+
+        .about-text {
+            max-width: 850px;
+            font-size: 22px;
+            color: #bbb;
+        }
+
+        .about-text strong {
+            color: #fff;
+        }
+
+        /* BRANDS */
+
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .brand-card {
+            position: relative;
+
+            padding: 35px;
+            min-height: 230px;
+
+            border: 1px solid #1b1b1b;
+            border-radius: 18px;
+
+            background: linear-gradient(
+                145deg,
+                #0d0d0d,
+                #080808
+            );
+
+            transition: 0.35s;
+        }
+
+        .brand-card:hover {
+            transform: translateY(-6px);
+            border-color: #444;
+        }
+
+        .brand-number {
+            color: #555;
+            font-size: 13px;
+        }
+
+        .brand-card h3 {
+            margin-top: 35px;
+            font-size: 28px;
+        }
+
+        .brand-card p {
+            color: #888;
+            margin: 10px 0 25px;
+            max-width: 500px;
+        }
+
+        .brand-link {
+            color: #fff;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        /* VISION */
+
+        .vision {
+            text-align: center;
+
+            background:
+                radial-gradient(circle at center,
+                rgba(255,255,255,0.07),
+                transparent 45%),
+                #050505;
+        }
+
+        .vision h2 {
+            font-size: clamp(45px, 8vw, 100px);
+            line-height: 1;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .vision p {
+            max-width: 650px;
+            margin: 30px auto 0;
+            color: #888;
+            font-size: 18px;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            background: #080808;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: clamp(40px, 7vw, 80px);
+        }
+
+        .contact p {
+            color: #888;
+            margin: 20px auto 35px;
+            max-width: 550px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 40px 7%;
+
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+
+            border-top: 1px solid #151515;
+
+            color: #666;
+            font-size: 13px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 18px 5%;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            section {
+                padding: 80px 5%;
+            }
+
+            .hero {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            .hero h1 {
+                letter-spacing: -3px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .brands-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .brand-card {
+                min-height: 210px;
+                padding: 28px;
+            }
+
+            .about-text {
+                font-size: 19px;
+            }
+
+            footer {
+                text-align: center;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+        <a href="#" class="logo">ZARARKAXAR</a>
+
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#brands">Companies</a></li>
+            <li><a href="#vision">Vision</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="tag">
+                TECHNOLOGY • INNOVATION • FUTURE
+            </div>
+
+            <h1>
+                ZARARKAXAR<span>.</span>
+            </h1>
+
+            <p>
+                Building technology for the future —
+                across artificial intelligence, cybersecurity,
+                networking, robotics, hardware, computing and space.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#brands" class="button">
+                    Explore Our Companies
+                </a>
+
+                <a href="#about" class="button button-outline">
+                    Discover Zararkaxar
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="about" id="about">
+
+        <div class="section-title">
+
+            <small>01 — About</small>
+
+            <h2>
+                One vision.<br>
+                Multiple frontiers.
+            </h2>
+
+        </div>
+
+        <div class="about-text">
+
+            <strong>Zararkaxar</strong> is a technology company
+            focused on creating and developing businesses,
+            products and technologies that can shape the future.
+
+            <br><br>
+
+            Instead of building everything under one product,
+            Zararkaxar connects specialized companies and
+            technologies into one ecosystem.
+
+        </div>
+
+    </section>
+
+
+    <!-- COMPANIES -->
+
+    <section id="brands">
+
+        <div class="section-title">
+
+            <small>02 — Our Companies</small>
+
+            <h2>
+                Explore the ecosystem.
+            </h2>
+
+            <p>
+                Each company focuses on a different technological frontier.
+            </p>
+
+        </div>
+
+
+        <div class="brands-grid">
+
+
+            <!-- BRAND 01 -->
+
+            <div class="brand-card">
+
+                <div class="brand-number">01</div>
+
+                <h3>Artificial Intelligence</h3>
+
+                <p>
+                    Intelligent technologies and AI systems
+                    designed to help people create, learn and solve problems.
+                </p>
+
+                <!-- Replace # with the real website later -->
+
+                <a href="#" class="brand-link">
+                    Visit Website →
+                </a>
+
+            </div>
+
+
+            <!-- BRAND 02 -->
+
+            <div class="brand-card">
+
+                <div class="brand-number">02</div>
+
+                <h3>Cybersecurity</h3>
+
+                <p>
+                    Technologies focused on protecting people,
+                    businesses, systems and digital information.
+                </p>
+
+                <a href="#" class="brand-link">
+                    Visit Website →
+                </a>
+
+            </div>
+
+
+            <!-- BRAND 03 -->
+
+            <div class="brand-card">
+
+                <div class="brand-number">03</div>
+
+                <h3>Networking</h3>
+
+                <p>
+                    Building technologies that connect devices,
+                    systems, people and the digital world.
+                </p>
+
+                <a href="#" class="brand-link">
+                    Visit Website →
+                </a>
+
+            </div>
+
+
+            <!-- BRAND 04 -->
+
+            <div class="brand-card">
+
+                <div class="brand-number">04</div>
+
+                <h3>Robotics</h3>
+
+                <p>
+                    Intelligent machines and robotic technologies
+                    for the next generation.
+                </p>
+
+                <a href="#" class="brand-link">
+                    Visit Website →
+                </a>
+
+            </div>
+
+
+            <!-- BRAND 05 -->
+
+            <div class="brand-card">
+
+                <div class="brand-number">05</div>
+
+                <h3>Hardware</h3>
+
+                <p>
+                    Designing and developing next-generation
+                    computing devices and hardware technologies.
+                </p>
+
+                <a href="#" class="brand-link">
+                    Visit Website →
+                </a>
+
+            </div>
+
+
+            <!-- BRAND 06 -->
+
+            <div class="brand-card">
+
+                <div class="brand-number">06</div>
+
+                <h3>Space Technology</h3>
+
+                <p>
+                    Exploring technologies that can extend
+                    human capabilities beyond Earth.
+                </p>
+
+                <a href="#" class="brand-link">
+                    Visit Website →
+                </a>
+
+            </div>
+
+
+            <!-- BRAND 07 -->
+
+            <div class="brand-card">
+
+                <div class="brand-number">07</div>
+
+                <h3>Computing</h3>
+
+                <p>
+                    Software, computing infrastructure and
+                    technologies powering the digital future.
+                </p>
+
+                <a href="#" class="brand-link">
+                    Visit Website →
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- VISION -->
+
+    <section class="vision" id="vision">
+
+        <div class="section-title" style="margin-left:auto;margin-right:auto;">
+
+            <small>03 — Vision</small>
+
+        </div>
+
+        <h2>
+            Build what comes next.
+        </h2>
+
+        <p>
+            Zararkaxar exists to explore ambitious ideas,
+            develop meaningful technology and build companies
+            for the future.
+        </p>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section class="contact" id="contact">
+
+        <h2>
+            Let's build the future.
+        </h2>
+
+        <p>
+            Zararkaxar is just getting started.
+            Follow the journey as the ecosystem grows.
+        </p>
+
+        <a href="#" class="button">
+            Contact Zararkaxar
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div>
+            © 2026 Zararkaxar. All rights reserved.
+        </div>
+
+        <div>
+            Building the future.
+        </div>
+
+    </footer>
+
+</body>
+</html>
